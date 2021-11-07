@@ -12,6 +12,7 @@ setuptools = ">=49.1.1"
 requests = "*"
 mechanize = "*"
 gooey = {file = "https://github.com/soleil0-0/Gooey/archive/1.0.5-release.zip"}
+pyinstaller = "*"
 
 [requires]
 python_version = "3.7"
