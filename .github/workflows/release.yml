@@ -55,7 +55,6 @@ jobs:
         run: |
           python -m pip install -U pip
           pip install -U pipenv
-          echo "$RUNNER_OS"
           if [ "$RUNNER_OS" == "Linux" ]; then
             sudo apt-get update -y -qq
             sudo apt-get install -y libwxgtk3.0 libsdl1.2debian
@@ -64,6 +63,7 @@ jobs:
             pipenv run pip install -U -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-18.04 --trusted-host extras.wxpython.org wxPython==4.0.7
             pipenv run pip install requests mechanize pyinstaller "setuptools>=49.1.1"
             pipenv run pip install -U https://github.com/soleil0-0/Gooey/archive/1.0.5-release.zip
+            pipenv run pyinstaller
           else
             pipenv install --three --dev --skip-lock
           fi
